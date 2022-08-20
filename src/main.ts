@@ -1,7 +1,14 @@
-export function run() {
-  // Add your logic here...
-  print("hello");
+import { StockHistory } from "./StockHistory";
 
-  // Write an action using print()
-  // To debug: printErr('Debug messages...');
+export function run()
+{
+	const n: number = parseInt(readline());
+	var inputs: string[] = readline().split(" ");
+	let stockHistory: StockHistory = new StockHistory();
+	for (let i = 0; i < n; i++)
+	{
+		stockHistory.addNumber(parseInt(inputs[i]));
+	}
+
+	console.log(stockHistory.getLoss());
 }
